@@ -1,0 +1,10 @@
+/*
+/*/
+!.gitignore
+!/README.md
+
+!/wp-content
+/wp-content/*
+!/wp-content/plugins
+/wp-content/plugins/*
+!/wp-content/plugins/shared-uploads-directory-wp
