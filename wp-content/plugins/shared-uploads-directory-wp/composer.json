@@ -7,10 +7,12 @@
             "email": "contact@sebastiansiejek.dev"
         }
     ],
-    "require": {},
     "autoload": {
         "psr-4": {
           "SharedUploadsDirectoryPlugin\\": ""
-        }
+        },
+        "files": [
+            "src/helpers/helpers.php"
+        ]
     }
 }
