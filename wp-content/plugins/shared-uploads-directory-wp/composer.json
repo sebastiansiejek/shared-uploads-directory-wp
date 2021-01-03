@@ -7,6 +7,9 @@
             "email": "contact@sebastiansiejek.dev"
         }
     ],
+    "require": {
+        "lazzard/php-ftp-client": "^1.1"
+    },
     "autoload": {
         "psr-4": {
           "SharedUploadsDirectoryPlugin\\": ""
