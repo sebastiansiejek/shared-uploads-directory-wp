@@ -12,3 +12,11 @@
  * Text Domain:       shared-uploads-directory-wp
  * Domain Path:       /languages
  */
+
+require_once 'vendor/autoload.php';
+
+use SharedUploadsDirectoryPlugin\src\admin\settings\Settings;
+
+if (is_admin()) {
+  new Settings();
+}
