@@ -1,0 +1,17 @@
+{
+    "name": "sebastiansiejek/shared-uploads-directory-wp",
+    "description": "WordPress plugin for keep uploads directory on remote server",
+    "type": "WordPress Plugin",
+    "authors": [
+        {
+            "name": "Sebastian Siejek",
+            "email": "contact@sebastiansiejek.dev"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+          "SharedUploadsDirectoryPlugin\\": ""
+        }
+    }
+}
