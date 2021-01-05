@@ -23,5 +23,5 @@ function getOption(array $options, string $key)
  */
 function getOptions()
 {
-  return get_option(Settings::slug . "_options");
+  return get_option(Settings::slug . "_options") ? get_option(Settings::slug . "_options") : [];
 }
