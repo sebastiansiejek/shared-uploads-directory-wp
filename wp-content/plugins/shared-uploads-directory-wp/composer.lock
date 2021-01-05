@@ -4,33 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d389f9164fb84daa29891833f3acf999",
+    "content-hash": "512362f9471e74916321fc72fa474861",
     "packages": [
         {
-            "name": "lazzard/php-ftp-client",
-            "version": "v1.1.0",
+            "name": "nicolab/php-ftp-client",
+            "version": "v1.5.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/lazzard/php-ftp-client.git",
-                "reference": "401a52774ac24930a542757ca5cea8c6ec90ce79"
+                "url": "https://github.com/Nicolab/php-ftp-client.git",
+                "reference": "572102d7e2c5a2a229c9875a41db073b08624b4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lazzard/php-ftp-client/zipball/401a52774ac24930a542757ca5cea8c6ec90ce79",
-                "reference": "401a52774ac24930a542757ca5cea8c6ec90ce79",
+                "url": "https://api.github.com/repos/Nicolab/php-ftp-client/zipball/572102d7e2c5a2a229c9875a41db073b08624b4e",
+                "reference": "572102d7e2c5a2a229c9875a41db073b08624b4e",
                 "shasum": ""
             },
             "require": {
                 "ext-ftp": "*",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4"
+                "php": ">=5.4"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Lazzard\\FtpClient\\": "src/"
+                "psr-0": {
+                    "FtpClient": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -39,18 +36,24 @@
             ],
             "authors": [
                 {
-                    "name": "El Amrani Chakir",
-                    "email": "elamrani.sv.laza@gmail.com",
-                    "homepage": "https://github.com/AmraniCh"
+                    "name": "Nicolas Tallefourtane",
+                    "email": "dev@nicolab.net",
+                    "homepage": "http://nicolab.net"
                 }
             ],
-            "description": "A fully object-oriented library to the PHP FTP extension plus extra features",
+            "description": "A flexible FTP and SSL-FTP client for PHP. This lib provides helpers easy to use to manage the remote files.",
+            "homepage": "https://github.com/Nicolab/php-ftp-client",
             "keywords": [
+                "file",
                 "ftp",
-                "ftp-client",
-                "ftp-library"
+                "helper",
+                "lib",
+                "server",
+                "sftp",
+                "ssl",
+                "ssl-ftp"
             ],
-            "time": "2020-10-13T02:40:40+00:00"
+            "time": "2020-09-10T10:27:54+00:00"
         }
     ],
     "packages-dev": [],
