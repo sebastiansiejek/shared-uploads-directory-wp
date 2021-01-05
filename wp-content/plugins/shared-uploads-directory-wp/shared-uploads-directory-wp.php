@@ -15,8 +15,13 @@
 
 require_once 'vendor/autoload.php';
 
+use SharedUploadsDirectoryPlugin\src\admin\remoteUpload\RemoteUpload;
 use SharedUploadsDirectoryPlugin\src\admin\settings\Settings;
+
+define('SUD_PLUGIN_ROOT_DIR', plugin_dir_path(__FILE__));
 
 if (is_admin()) {
   new Settings();
 }
+
+(new RemoteUpload())->init();
