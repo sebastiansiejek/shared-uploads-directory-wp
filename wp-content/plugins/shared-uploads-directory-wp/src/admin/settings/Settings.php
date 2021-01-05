@@ -25,8 +25,9 @@ class Settings
     $fieldsCreator = new FieldsCreator();
     $fieldsCreator->createInput('ftp_host', 'FTP HOST', 'ftp_settings');
     $fieldsCreator->createInput('ftp_port', 'FTP PORT', 'ftp_settings');
-    $fieldsCreator->createInput('ftp_login', 'FTP LOGIN', 'ftp_settings');
+    $fieldsCreator->createInput('ftp_user', 'FTP LOGIN', 'ftp_settings');
     $fieldsCreator->createInput('ftp_password', 'FTP PASSWORD', 'ftp_settings');
     $fieldsCreator->createInput('ftp_directory', 'FTP DIRECTORY', 'ftp_settings');
+    $fieldsCreator->createInput('ftp_cdn', 'CDN', 'ftp_settings');
   }
 }
