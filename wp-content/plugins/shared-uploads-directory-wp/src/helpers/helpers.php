@@ -9,7 +9,7 @@ use SharedUploadsDirectoryPlugin\src\admin\settings\Settings;
  *
  * @param array $options
  * @param string $name
- * @return void
+ * @return string
  */
 function getOption(array $options, string $key)
 {
