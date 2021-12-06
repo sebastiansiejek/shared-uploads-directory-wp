@@ -10,7 +10,7 @@ use League\Flysystem\PhpseclibV2\SftpConnectionProvider;
 class FTP
 {
 
-  function __construct()
+  function getConnection()
   {
     try {
       $options = getOptions();
@@ -19,6 +19,7 @@ class FTP
       $host = getOption($options, 'ftp_host');
       $port = getOption($options, 'ftp_port');
       $ftpConnection = new SftpConnectionProvider($host, $login, $password, null, null, (int)$port);
+      return $ftpConnection;
     } catch (\Throwable $th) {
       displayNotice($th->getMessage());
     }
