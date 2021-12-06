@@ -4,6 +4,7 @@
 !/README.md
 
 !/wp-content
+!docker-compose.yml
 /wp-content/*
 !/wp-content/plugins
 /wp-content/plugins/*
