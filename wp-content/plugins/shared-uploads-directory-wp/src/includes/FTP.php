@@ -41,4 +41,14 @@ class FTP
       displayNotice($th->getMessage());
     }
   }
+
+  /**
+   * Upload file to the FTP server
+   *
+   * @param string $fileDirectory
+   */
+  function uploadFile(string $fileDirectory)
+  {
+    return (new UploadFile($this->getConnection()))->upload($fileDirectory,  $this->getDirectory());
+  }
 }

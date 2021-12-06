@@ -21,10 +21,9 @@ class HandleUpload
     add_filter('wp_handle_upload', function ($upload) {
       $type = $upload['type'];
       $ftp = new FTP();
-      $uploadFile = new UploadFile($ftp);
 
       if (!isImage($type)) {
-        $uploadFile->upload($upload['file']);
+        $ftp->uploadFile($upload['file']);
       }
 
       return $upload;
@@ -44,12 +43,11 @@ class HandleUpload
         $file = $upload['file'];
         $sizes = $upload['sizes'];
         $ftp = new FTP();
-        $uploadFile = new UploadFile($ftp);
-        $uploadFile->upload($baseUploadDir . $file);
+        $ftp->uploadFile($baseUploadDir . $file);
 
         foreach ($sizes as $size) {
           $file = $size['file'];
-          $uploadFile->upload($uploadCurrentDatePath . $file);
+          $ftp->uploadFile($uploadCurrentDatePath . $file);
         }
       }
 
