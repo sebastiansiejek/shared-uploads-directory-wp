@@ -36,7 +36,7 @@ class FTP
     $baseDirectory = getOption($options, 'ftp_directory');
 
     try {
-      return (new SftpAdapter((new FTP())->getConnection(), $baseDirectory + $path));
+      return (new SftpAdapter($this->getConnection(), $baseDirectory . $path));
     } catch (\Throwable $th) {
       displayNotice($th->getMessage());
     }
