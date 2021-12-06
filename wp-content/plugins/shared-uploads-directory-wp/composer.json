@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "nicolab/php-ftp-client": "^1.5"
+        "league/flysystem-sftp": "^2.0"
     },
     "autoload": {
         "psr-4": {
