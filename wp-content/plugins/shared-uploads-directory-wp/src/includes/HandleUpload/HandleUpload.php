@@ -3,7 +3,6 @@
 namespace SharedUploadsDirectoryPlugin\src\includes\HandleUpload;
 
 use SharedUploadsDirectoryPlugin\src\includes\FTP;
-use SharedUploadsDirectoryPlugin\src\includes\UploadFile;
 
 use function SharedUploadsDirectoryPlugin\src\admin\helpers\isImage;
 
@@ -16,6 +15,9 @@ class HandleUpload
     $this->handleImage();
   }
 
+  /**
+   * Handling files upload except images
+   */
   private function handleFile()
   {
     add_filter('wp_handle_upload', function ($upload) {
@@ -32,6 +34,9 @@ class HandleUpload
     return $this;
   }
 
+  /**
+   * Handling images upload
+   */
   private function handleImage()
   {
     add_filter('wp_generate_attachment_metadata', function ($upload) {
