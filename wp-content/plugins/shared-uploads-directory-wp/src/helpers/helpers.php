@@ -25,3 +25,10 @@ function getOptions()
 {
   return get_option(Settings::slug . "_options") ? get_option(Settings::slug . "_options") : [];
 }
+
+function displayNotice($message, string $type = 'error')
+{
+  return add_action('admin_notices', function () use ($message, $type) {
+    require_once SHARED_UPLOADS_DIRECTORY_PLUGIN_PATH . 'src/admin/templates/notice.php';
+  });
+}
