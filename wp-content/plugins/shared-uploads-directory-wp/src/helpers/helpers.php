@@ -32,3 +32,9 @@ function displayNotice($message, string $type = 'error')
     require_once SHARED_UPLOADS_DIRECTORY_PLUGIN_PATH . 'src/admin/templates/notice.php';
   });
 }
+
+
+function isImage(string $text)
+{
+  return strpos($text, 'image/') === 0;
+}

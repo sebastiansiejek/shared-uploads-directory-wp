@@ -14,13 +14,13 @@ class UploadFile
     $this->_ftp = $ftp;
   }
 
-  function upload(string $fileDirectory)
+  function upload(string $fileDirectory, string $destinationPath = '/')
   {
     try {
       $handleFile = fopen($fileDirectory, 'r');
       $explodePath = explode("/uploads", $fileDirectory);
       $fileDirectoryWithName = $explodePath[1];
-      (new Filesystem($this->_ftp->getDirectory()))->writeStream($fileDirectoryWithName, $handleFile);
+      (new Filesystem($this->_ftp->getDirectory($destinationPath)))->writeStream($fileDirectoryWithName, $handleFile);
     } catch (\Throwable $th) {
       var_dump($th->getMessage());
     }
