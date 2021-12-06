@@ -16,7 +16,11 @@
 require_once 'vendor/autoload.php';
 
 use SharedUploadsDirectoryPlugin\src\admin\settings\Settings;
+use SharedUploadsDirectoryPlugin\src\includes\FTP;
+
+define('SHARED_UPLOADS_DIRECTORY_PLUGIN_PATH', __DIR__ . '/');
 
 if (is_admin()) {
   new Settings();
+  new FTP();
 }
