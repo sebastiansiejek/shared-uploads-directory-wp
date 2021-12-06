@@ -10,6 +10,11 @@ class HandleUpload
 
   function __construct()
   {
+    $this->handleFile();
+  }
+
+  private function handleFile()
+  {
     add_filter('wp_handle_upload', function ($upload) {
       $type = $upload['type'];
       $isImage = strpos($type, 'image/') === 0;
@@ -22,5 +27,7 @@ class HandleUpload
 
       return $upload;
     }, 10, 2);
+
+    return $this;
   }
 }
