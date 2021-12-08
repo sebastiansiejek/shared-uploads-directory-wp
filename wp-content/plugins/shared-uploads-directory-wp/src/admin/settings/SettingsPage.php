@@ -25,4 +25,9 @@ class SettingsPage
       }
     );
   }
+
+  function isCurrentPage()
+  {
+    return is_admin() && isset($_GET['page']) && $_GET['page'] == Settings::slug;
+  }
 }
