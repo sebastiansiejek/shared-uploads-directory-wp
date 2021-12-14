@@ -8,6 +8,11 @@ use function SharedUploadsDirectoryPlugin\src\admin\helpers\getOptions;
 class UploadDir
 {
 
+  /**
+   * Set base URL for the uploads directory
+   *
+   * @return this
+   */
   function setBaseURL()
   {
     add_filter(
@@ -24,5 +29,7 @@ class UploadDir
         return $args;
       }
     );
+
+    return $this;
   }
 }
