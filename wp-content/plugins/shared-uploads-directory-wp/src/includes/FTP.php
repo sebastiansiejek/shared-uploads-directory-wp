@@ -26,6 +26,7 @@ class FTP
       $host = getOption($options, 'ftp_host');
       $port = getOption($options, 'ftp_port');
       $ftpConnection = new SftpConnectionProvider($host, $login, $password, null, null, (int)$port);
+      $ftpConnection->provideConnection();
       return $ftpConnection;
     } catch (\Throwable $th) {
       displayNotice($th->getMessage());
