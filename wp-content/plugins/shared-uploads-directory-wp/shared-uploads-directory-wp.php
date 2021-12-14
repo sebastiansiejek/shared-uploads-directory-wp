@@ -22,6 +22,7 @@ use SharedUploadsDirectoryPlugin\src\includes\HandleUpload\HandleUpload;
 use SharedUploadsDirectoryPlugin\src\includes\UploadDir;
 
 define('SHARED_UPLOADS_DIRECTORY_PLUGIN_PATH', __DIR__ . '/');
+define('SHARED_UPLOADS_DIRECTORY_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
 if (is_admin()) {
   new Settings();
