@@ -2,6 +2,8 @@
 
 Wordpress Plugin for upload every file from `/uploads` to remote server. Now you can share your uploads directory with your team!
 
+![Settings page](./docs/images/settings-page.jpeg)
+
 ## Supports
 
 * SFTP

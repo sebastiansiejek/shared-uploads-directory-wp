@@ -3,6 +3,7 @@
 !.gitignore
 !.gitattributes
 !/README.md
+!/docs
 
 !/wp-content
 !docker-compose.yml
