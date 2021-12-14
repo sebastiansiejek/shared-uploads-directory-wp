@@ -43,7 +43,7 @@ class HandleUpload
   private function handleImage()
   {
     add_filter('wp_generate_attachment_metadata', function ($upload) {
-      if ($upload && is_array($upload) && count($upload) > 0) {
+      if ($upload && is_array($upload) && count($upload) > 0 && !isset($upload['mime_type'])) {
         $uploadDir = wp_upload_dir();
         $uploadCurrentDatePath = $uploadDir['path'] . '/';
         $baseUploadDir = $uploadDir['basedir'] . '/';
