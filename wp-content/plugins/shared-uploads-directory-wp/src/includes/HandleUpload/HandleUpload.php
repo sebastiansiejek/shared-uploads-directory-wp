@@ -3,7 +3,6 @@
 namespace SharedUploadsDirectoryPlugin\src\includes\HandleUpload;
 
 use SharedUploadsDirectoryPlugin\src\includes\FTP;
-
 use function SharedUploadsDirectoryPlugin\src\admin\helpers\isImage;
 
 class HandleUpload
@@ -17,6 +16,8 @@ class HandleUpload
 
   /**
    * Handling files upload except images
+   *
+   * @return this
    */
   private function handleFile()
   {
@@ -36,6 +37,8 @@ class HandleUpload
 
   /**
    * Handling images upload
+   *
+   * @return this
    */
   private function handleImage()
   {
