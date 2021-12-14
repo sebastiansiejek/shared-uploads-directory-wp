@@ -12,6 +12,11 @@ use League\Flysystem\PhpseclibV2\SftpConnectionProvider;
 class FTP
 {
 
+  /**
+   * Get connection to remote FTP server
+   *
+   * @return \League\Flysystem\PhpseclibV2\SftpConnectionProvider
+   */
   function getConnection()
   {
     try {
@@ -28,6 +33,8 @@ class FTP
   }
 
   /**
+   * Get adapter for remote FTP server
+   *
    * @return SftpAdapter
    */
   function getDirectory(string $path = "/"): SftpAdapter
@@ -45,7 +52,7 @@ class FTP
   /**
    * Upload file to the FTP server
    *
-   * @param string $fileDirectory
+   * @param void
    */
   function uploadFile(string $fileDirectory)
   {
