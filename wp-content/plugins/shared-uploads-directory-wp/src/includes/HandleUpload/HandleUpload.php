@@ -43,19 +43,24 @@ class HandleUpload
   private function handleImage()
   {
     add_filter('wp_generate_attachment_metadata', function ($upload) {
-
-      if (isset($upload['sizes']) && isImage($upload['sizes']['thumbnail']['mime-type'])) {
+      if ($upload && is_array($upload) && count($upload) > 0) {
         $uploadDir = wp_upload_dir();
         $uploadCurrentDatePath = $uploadDir['path'] . '/';
         $baseUploadDir = $uploadDir['basedir'] . '/';
         $file = $upload['file'];
-        $sizes = $upload['sizes'];
         $ftp = new FTP();
+
+        // Upload original image
         $ftp->uploadFile($baseUploadDir . $file);
 
-        foreach ($sizes as $size) {
-          $file = $size['file'];
-          $ftp->uploadFile($uploadCurrentDatePath . $file);
+        // Upload generated images
+        if (isset($upload['sizes']) && count($upload['sizes']) > 0) {
+          $sizes = $upload['sizes'];
+
+          foreach ($sizes as $size) {
+            $file = $size['file'];
+            $ftp->uploadFile($uploadCurrentDatePath . $file);
+          }
         }
       }
 
