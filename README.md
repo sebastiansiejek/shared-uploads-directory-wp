@@ -1,5 +1,6 @@
 # Shared Uploads Directory
-Wordpress Plugin for upload every media to remote server
+
+Wordpress Plugin for upload every media from /uploads to remote server.
 
 ## Develop
 
@@ -10,9 +11,14 @@ Wordpress Plugin for upload every media to remote server
 * Docker
 
 ### Getting started
+
 1. Clone the repository
 2. Start docker containers - `docker-compose up -d`
 3. Install dependencies
    1. `docker exec -it <CONTAINER_ID> bash`
    2. `cd wp-content/plugins/shared-uploads-directory-wp`
    3. `composer install`
+
+## Author
+
+* [Sebastian Siejek](https://github.com/sebastiansiejek)
