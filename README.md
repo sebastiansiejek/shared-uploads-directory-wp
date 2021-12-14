@@ -1,6 +1,11 @@
 # Shared Uploads Directory
 
-Wordpress Plugin for upload every media from /uploads to remote server.
+Wordpress Plugin for upload every file from `/uploads` to remote server. Now you can share your uploads directory with your team!
+
+## Supports
+
+* SFTP
+* Every file type from `/uploads` directory
 
 ## Develop
 
