@@ -7,6 +7,10 @@ use League\Flysystem\PhpseclibV2\SftpAdapter;
 
 class UploadFile
 {
+
+  /**
+   * Upload file to the remote FTP server
+   */
   function upload(string $fileDirectory, SftpAdapter $destinationPath)
   {
     try {
