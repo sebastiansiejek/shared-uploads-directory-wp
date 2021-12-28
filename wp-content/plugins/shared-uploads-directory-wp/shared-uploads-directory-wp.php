@@ -19,12 +19,16 @@ use SharedUploadsDirectoryPlugin\src\admin\settings\Settings;
 use SharedUploadsDirectoryPlugin\src\admin\settings\SettingsPage;
 use SharedUploadsDirectoryPlugin\src\includes\FTP;
 use SharedUploadsDirectoryPlugin\src\includes\HandleUpload\HandleUpload;
+use SharedUploadsDirectoryPlugin\src\includes\Update;
 use SharedUploadsDirectoryPlugin\src\includes\UploadDir;
 
+define('SHARED_UPLOADS_DIRECTORY_PLUGIN_SLUG', 'shared-uploads-directory-wp');
 define('SHARED_UPLOADS_DIRECTORY_PLUGIN_PATH', __DIR__ . '/');
 define('SHARED_UPLOADS_DIRECTORY_PLUGIN_BASENAME', plugin_basename(__FILE__));
+define('SHARED_UPLOADS_DIRECTORY_PLUGIN_FILE', __FILE__);
 
 if (is_admin()) {
+  new Update();
   new Settings();
 }
 
