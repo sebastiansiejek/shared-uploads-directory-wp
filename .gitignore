@@ -6,6 +6,7 @@
 !/docs
 
 !/wp-content
+!/.github
 !docker-compose.yml
 /wp-content/*
 !/wp-content/plugins
