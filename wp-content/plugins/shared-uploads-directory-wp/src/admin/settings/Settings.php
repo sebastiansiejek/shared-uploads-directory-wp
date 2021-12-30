@@ -25,12 +25,30 @@ class Settings
     register_setting(Settings::slug . "_options", Settings::slug . "_options");
     add_settings_section(Settings::slug . '_ftp_settings', __(Settings::name, Settings::slug), '', Settings::slug);
     $fieldsCreator = new FieldsCreator();
-    $fieldsCreator->createInput('ftp_host', 'FTP HOST', 'ftp_settings');
-    $fieldsCreator->createInput('ftp_port', 'FTP PORT', 'ftp_settings', 'number');
-    $fieldsCreator->createInput('ftp_user', 'FTP LOGIN', 'ftp_settings');
-    $fieldsCreator->createInput('ftp_password', 'FTP PASSWORD', 'ftp_settings');
-    $fieldsCreator->createInput('ftp_directory', 'FTP DIRECTORY', 'ftp_settings');
-    $fieldsCreator->createInput('ftp_cdn', 'CDN', 'ftp_settings');
+
+    if (!defined('SUD_FTP_HOST')) {
+      $fieldsCreator->createInput('ftp_host', 'FTP HOST', 'ftp_settings');
+    }
+
+    if (!defined('SUD_FTP_PORT')) {
+      $fieldsCreator->createInput('ftp_port', 'FTP PORT', 'ftp_settings', 'number');
+    }
+
+    if (!defined('SUD_FTP_USER')) {
+      $fieldsCreator->createInput('ftp_user', 'FTP LOGIN', 'ftp_settings');
+    }
+
+    if (!defined('SUD_FTP_PASSWORD')) {
+      $fieldsCreator->createInput('ftp_password', 'FTP PASSWORD', 'ftp_settings');
+    }
+
+    if (!defined('SUD_FTP_DIRECTORY')) {
+      $fieldsCreator->createInput('ftp_directory', 'FTP DIRECTORY', 'ftp_settings');
+    }
+
+    if (!defined('SUD_FTP_CDN')) {
+      $fieldsCreator->createInput('ftp_cdn', 'CDN', 'ftp_settings');
+    }
   }
 
   private function addLinksOnPluginsList()
