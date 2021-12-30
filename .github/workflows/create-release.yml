@@ -22,9 +22,7 @@ jobs:
         run: |
           cd wp-content/plugins/shared-uploads-directory-wp
           composer install
-          mkdir shared-uploads-directory-wp
-          mv ./ shared-uploads-directory-wp
 
       - uses: softprops/action-gh-release@v1
         with:
-          files: wp-content/plugins/shared-uploads-directory-wp/shared-uploads-directory-wp
+          files: wp-content/plugins/**/.*
