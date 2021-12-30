@@ -25,7 +25,9 @@ jobs:
 
       - name: ZIP
         run: |
-          zip -r shared-uploads-directory-wp.zip wp-content/plugins
+          mkdir shared-uploads-directory-wp
+          cp -R ./wp-content/plugins/shared-uploads-directory-wp/* ./shared-uploads-directory-wp
+          zip -r shared-uploads-directory-wp.zip shared-uploads-directory-wp
 
       - name: Upload artifact
         uses: actions/upload-release-asset@v1
