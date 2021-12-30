@@ -13,7 +13,12 @@ use SharedUploadsDirectoryPlugin\src\admin\settings\Settings;
  */
 function getOption(array $options, string $key)
 {
-  return count($options) && isset($options[$key]) ? $options[$key] : '';
+  if (count($options) && isset($options[$key]) && $options[$key]) {
+    return $options[$key];
+  }
+
+  $constName = 'SUD_' . strtoupper($key);
+  return defined($constName) ? constant('SUD_' . strtoupper($key)) : '';
 }
 
 /**

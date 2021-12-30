@@ -9,6 +9,20 @@ Wordpress Plugin for upload every file from `/uploads` to remote server. Now you
 * SFTP
 * Every file type from `/uploads` directory
 
+## Configuration
+
+### Code
+
+Your can define remote server configuration in `wp-config.php` file. If you define constants inputs in admin panel will be **ignored**.
+
+```php
+define('SUD_FTP_HOST', '');
+define('SUD_FTP_PORT', '');
+define('SUD_FTP_USER', '');
+define('SUD_FTP_PASSWORD', '');
+define('SUD_FTP_DIRECTORY', '');
+define('SUD_FTP_CDN', '');
+```
 ## Develop
 
 ### Requirements
