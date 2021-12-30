@@ -23,6 +23,16 @@ jobs:
           cd wp-content/plugins/shared-uploads-directory-wp
           composer install
 
-      - uses: softprops/action-gh-release@v1
+      - name: ZIP
+        run: |
+          zip -r shared-uploads-directory-wp.zip wp-content/plugins
+
+      - name: Upload artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
-          files: wp-content/plugins/**/.*
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_name: shared-uploads-directory-wp.zip
+          asset_path: ./shared-uploads-directory-wp.zip
+          asset_content_type: application/zip
