@@ -2,6 +2,10 @@
 
 namespace SharedUploadsDirectoryPlugin\src\admin\settings;
 
+use function SharedUploadsDirectoryPlugin\src\admin\helpers\displayNotice;
+use function SharedUploadsDirectoryPlugin\src\admin\helpers\getOption;
+use function SharedUploadsDirectoryPlugin\src\admin\helpers\getOptions;
+
 class Settings
 {
   const name = 'Shared Uploads Directory';
@@ -68,5 +72,49 @@ class Settings
     );
 
     return $this;
+  }
+
+  static function isRequiredSettings()
+  {
+    $options = getOptions();
+    $name = Settings::name . ": ";
+
+    $user = getOption($options, "ftp_user");
+    if (!$user) {
+      displayNotice(__("{$name} FTP user is required", Settings::slug));
+      return false;
+    }
+
+    $password = getOption($options, "ftp_password");
+    if (!$password) {
+      displayNotice(__("{$name} FTP password is required", Settings::slug));
+      return false;
+    }
+
+    $host = getOption($options, "ftp_host");
+    if (!$host) {
+      displayNotice(__("{$name} FTP host is required", Settings::slug));
+      return false;
+    }
+
+    $port = getOption($options, "ftp_port");
+    if (!$port) {
+      displayNotice(__("{$name} FTP port is required", Settings::slug));
+      return false;
+    }
+
+    $cdn = getOption($options, "ftp_cdn");
+    if (!$cdn) {
+      displayNotice(__("{$name} CDN is required", Settings::slug));
+      return false;
+    }
+
+    $directory = getOption($options, "ftp_directory");
+    if (!$directory) {
+      displayNotice(__("{$name} FTP directory is required", Settings::slug));
+      return false;
+    }
+
+    return true;
   }
 }
