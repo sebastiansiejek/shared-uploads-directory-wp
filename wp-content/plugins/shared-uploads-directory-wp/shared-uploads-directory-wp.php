@@ -13,7 +13,7 @@
  * Domain Path:       /languages
  */
 
-require_once 'vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins/shared-uploads-directory-wp/vendor/autoload.php';
 
 use SharedUploadsDirectoryPlugin\src\admin\settings\Settings;
 use SharedUploadsDirectoryPlugin\src\admin\settings\SettingsPage;
