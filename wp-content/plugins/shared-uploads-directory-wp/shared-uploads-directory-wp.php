@@ -4,7 +4,7 @@
  * Plugin Name:       Shared Uploads Directory Plugin
  * Plugin URI:        https://github.com/sebastiansiejek/shared-uploads-directory-wp
  * Description:       Plugin keeps /uploads directory on remote server.
- * Version:           1.0.2
+ * Version:           1.0.5
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            Sebastian Siejek
