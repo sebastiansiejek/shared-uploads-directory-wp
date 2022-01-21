@@ -15,19 +15,15 @@ class HandleUpload
   }
 
   /**
-   * Handling files upload except images
+   * Handling files
    *
    * @return this
    */
   private function handleFile()
   {
     add_filter('wp_handle_upload', function ($upload) {
-      $type = $upload['type'];
       $ftp = new FTP();
-
-      if (!isImage($type)) {
-        $ftp->uploadFile($upload['file']);
-      }
+      $ftp->uploadFile($upload['file']);
 
       return $upload;
     }, 10, 2);
@@ -36,7 +32,7 @@ class HandleUpload
   }
 
   /**
-   * Handling images upload
+   * Handling generated images
    *
    * @return this
    */
@@ -46,12 +42,9 @@ class HandleUpload
       if ($upload && is_array($upload) && count($upload) > 0 && !isset($upload['mime_type'])) {
         $uploadDir = wp_upload_dir();
         $uploadCurrentDatePath = $uploadDir['path'] . '/';
-        $baseUploadDir = $uploadDir['basedir'] . '/';
         $file = $upload['file'];
         $ftp = new FTP();
 
-        // Upload original image
-        $ftp->uploadFile($baseUploadDir . $file);
 
         // Upload generated images
         if (isset($upload['sizes']) && count($upload['sizes']) > 0) {
